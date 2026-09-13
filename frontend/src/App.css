@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #e8f5e9;
+  background: #07100b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(45, 255, 135, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(255, 65, 110, 0.07),
+      transparent 30%
+    ),
+    #07100b;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.hero {
+  padding-top: 10px;
+}
+
+.brand-mark {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: #77ffae;
+  margin-bottom: 25px;
+}
+
+.brand-mark span {
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.brand-mark i {
+  color: #718078;
+  font-style: normal;
+  margin-left: 10px;
+}
+
+.hero-copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #77ffae;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  color: #f2fff4;
+}
+
+h1 em {
+  color: #ff577d;
+  font-style: normal;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #f0fff3;
+}
+
+.hero-text {
+  max-width: 560px;
+  margin: 22px 0 0;
+  color: #8d9b91;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.status-pill {
+  flex-shrink: 0;
+  border: 1px solid rgba(119, 255, 174, 0.25);
+  padding: 13px 17px;
+  border-radius: 10px;
+  background: rgba(119, 255, 174, 0.035);
+  color: #77ffae;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.status-pill b {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #77ffae;
+  box-shadow: 0 0 10px #77ffae;
+}
+
+.status-pill small {
+  color: #728078;
+  font-size: 0.58rem;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.panel-card,
+.roast-card {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.panel-card {
+  border: 1px solid rgba(119, 255, 174, 0.12);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 34, 25, 0.94),
+      rgba(10, 19, 13, 0.94)
+    );
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+.roast-card {
+  border: 1px solid rgba(255, 87, 125, 0.25);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(40, 18, 25, 0.96),
+      rgba(18, 12, 15, 0.96)
+    );
+  min-height: 100%;
+}
+
+.card-body {
+  color: #e8f5e9;
+}
+
+
+/* =========================
+   CAMERA
+========================= */
+
+.camera-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+  border: 1px solid rgba(119, 255, 174, 0.14);
+  border-radius: 12px;
+  background: #020604;
+}
+
+.camera-wrap video {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.camera-label {
+  position: absolute;
+  z-index: 3;
+  top: 12px;
+  left: 12px;
+  padding: 6px 9px;
+  border-radius: 5px;
+  background: rgba(3, 10, 6, 0.75);
+  color: #77ffae;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+.scan-line {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(119, 255, 174, 0.35);
+  box-shadow: 0 0 10px rgba(119, 255, 174, 0.45);
+  pointer-events: none;
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-150px);
+  }
+
+  50% {
+    transform: translateY(150px);
+  }
+
+  100% {
+    transform: translateY(-150px);
+  }
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.roast-button {
+  border: 1px solid #ff577d;
+  border-radius: 9px;
+  padding: 13px 18px;
+  background: #ff577d;
+  color: #13060a;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.roast-button:hover:not(:disabled) {
+  background: #ff7191;
+  box-shadow:
+    0 0 25px rgba(255, 87, 125, 0.25);
+  transform: translateY(-1px);
+}
+
+.roast-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   ASCII
+========================= */
+
+.ascii-shell {
+  position: relative;
+  min-height: 350px;
+  overflow: auto;
+  border: 1px solid rgba(119, 255, 174, 0.14);
+  border-radius: 12px;
+  background: #020604;
+}
+
+.terminal-dots {
+  position: sticky;
+  top: 0;
+  display: block;
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(119, 255, 174, 0.08);
+  background: #07100b;
+  color: #52665a;
+  font-size: 0.65rem;
+}
+
+.ascii-art {
+  margin: 0;
+  padding: 22px;
+  color: #77ffae;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  line-height: 0.72rem;
+  text-shadow:
+    0 0 8px rgba(119, 255, 174, 0.2);
+  white-space: pre;
+}
+
+
+/* =========================
+   METRICS
+========================= */
+
+.metrics {
+  display: grid;
+  gap: 10px;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 14px;
+  border: 1px solid rgba(119, 255, 174, 0.09);
+  border-radius: 8px;
+  background: rgba(119, 255, 174, 0.025);
+}
+
+.metric span {
+  color: #7f9084;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+}
+
+.metric strong {
+  color: #77ffae;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+}
+
+
+/* =========================
+   ROAST
+========================= */
+
+.roast-card blockquote {
+  margin: 28px 0 0;
+  color: #fff1f4;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.confidence {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 87, 125, 0.2);
+  border-radius: 6px;
+  color: #ff8ca6;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+}
+
+.disclaimer {
+  color: #75676b;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+}
+
+
+/* =========================
+   CAPTURED IMAGE
+========================= */
+
+.captured-image {
+  display: block;
+  width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid rgba(119, 255, 174, 0.12);
+  background: #020604;
+}
+
+
+/* =========================
+   ALERT
+========================= */
+
+.alert-warning {
+  border: 1px solid rgba(255, 193, 7, 0.25);
+  background: rgba(255, 193, 7, 0.06);
+  color: #e4c86a;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  color: #4e5c53;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 991px) {
+  .hero-copy {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .status-pill {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .camera-wrap,
+  .camera-wrap video,
+  .ascii-shell {
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .camera-wrap video {
+    height: 280px;
+  }
+
+  h1 {
+    font-size: 2.7rem;
+  }
+
+  .ascii-art {
+    padding: 15px;
+    font-size: 0.42rem;
+    line-height: 0.58rem;
+  }
+}
